@@ -1,10 +1,104 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+	@media (max-width: 768px) {
+		font-size: 50%;
+	}
 }
 
 *,
 *:before,
 *:after {
 	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--primary1: #fffc3a;
+	--primary2: #51ff3a;
+	--white: #ffffff;
+	--black: #04040b;
+	--secondary: #0a0a11;
+}
+
+body {
+	background-color: var(--secondary);
+	color: var((--primary1));
+	font-family: "Press Start 2P", Cambria, Cochin, Georgia, Times,
+		"Times New Roman", serif;
+}
+
+h1 {
+	font-size: 4rem;
+	text-align: center;
+	margin-top: 4rem;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	padding: 0 2rem;
+	margin-top: 6rem;
+
+	h2 {
+		font-size: 1.6rem;
+	}
+	section {
+		text-align: center;
+		margin: 0 2rem;
+		margin-top: 2rem;
+	}
+	.monitor {
+		margin-top: 0rem;
+		width: 65%;
+		canvas {
+			background-color: #04040b;
+			width: 100%;
+		}
+	}
+
+	@media (max-width: 768px) {
+		flex-direction: column-reverse;
+		section {
+			width: 85vw;
+			margin: auto;
+		}
+	}
+
+	.controls {
+		width: 20%;
+		margin: 2rem auto;
+		.keys {
+			margin-top: 2rem;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			.key {
+				font-size: 1.4rem;
+				margin: 1rem auto;
+			}
+		}
+	}
+
+	.roms {
+		width: 15%;
+		text-align: left;
+		h2 {
+			margin-bottom: 1rem;
+			padding: 0rem 2rem;
+		}
+		.list {
+			list-style: none;
+			.item {
+				padding: 2rem;
+				cursor: pointer;
+				&:hover {
+					background: var(--black);
+				}
+			}
+			.selected {
+				background: var(--black);
+			}
+		}
+	}
 }

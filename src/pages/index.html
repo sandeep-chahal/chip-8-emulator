@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Classic chip-8 emulator in javascript.a">
     <link rel="stylesheet" href="../styles/main.scss"/>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <title>Chip 8</title>
 </head>
 <body>
     <h1>Chip 8</h1>
+    <main>
+        <section class="controls">
+            <h2>Controls</h2>
+            <div class="keys">
+                <span class="key">1</span>
+                <span class="key">2</span>
+                <span class="key">3</span>
+                <span class="key">4</span>
+                <span class="key">Q</span>
+                <span class="key">W</span>
+                <span class="key">E</span>
+                <span class="key">R</span>
+                <span class="key">A</span>
+                <span class="key">S</span>
+                <span class="key">D</span>
+                <span class="key">F</span>
+                <span class="key">Z</span>
+                <span class="key">X</span>
+                <span class="key">C</span>
+                <span class="key">V</span>
+            </div>
+            
+        </section>
+        <section class="monitor">
+            <canvas></canvas>
+        </section>
+        <section class="roms">
+            <h2>Roms</h2>
+            <ul class="list">
+                <li class="item selected">None</li>
+                <li class="item">PONG2</li>
+                <li class="item">MISSILE</li>
+                <li class="item">BLINKY</li>
+                <li class="item">MAZE</li>
+                <li class="item">BLITZ</li>
+            </ul>
+        </section>
+
+    </main>
     <script src="../js/chip8.ts"></script>
 </body>
 </html>
