@@ -65,6 +65,12 @@ main {
 			width: 85vw !important;
 			margin: auto;
 		}
+		.roms {
+			.list {
+				max-height: 10vh;
+			}
+			margin-bottom: 2rem;
+		}
 	}
 
 	.controls {
@@ -84,12 +90,22 @@ main {
 	.roms {
 		width: 15%;
 		text-align: left;
+		::-webkit-scrollbar {
+			width: 1em;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: var(--primary1);
+		}
+
 		h2 {
 			margin-bottom: 1rem;
 			padding: 0rem 2rem;
 		}
 		.list {
 			list-style: none;
+			height: 50vh;
+			overflow-y: scroll;
 			.item {
 				padding: 2rem;
 				cursor: pointer;

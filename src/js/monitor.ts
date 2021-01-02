@@ -35,7 +35,7 @@ class Monitor {
 	}
 
 	reset() {
-		// clear the display
+		// reset the display
 		this.display = new Array(this.cols * this.rows);
 	}
 

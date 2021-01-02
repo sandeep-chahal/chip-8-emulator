@@ -6,7 +6,7 @@
   "scripts": {
     "watch":"parcel watch src/pages/index.html",
     "dev":"parcel src/pages/index.html",
-    "build":"parcel build src/pages/index.html"
+    "build":"parcel build src/pages/index.html --out-dir public --no-cache"
   },
   "keywords": [
     "chip8",
