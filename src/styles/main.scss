@@ -55,13 +55,14 @@ main {
 		canvas {
 			background-color: #04040b;
 			width: 100%;
+			border: 2px solid var(--primary1);
 		}
 	}
 
 	@media (max-width: 768px) {
 		flex-direction: column-reverse;
 		section {
-			width: 85vw;
+			width: 85vw !important;
 			margin: auto;
 		}
 	}
