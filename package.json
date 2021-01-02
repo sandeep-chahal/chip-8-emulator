@@ -1,12 +1,12 @@
 {
   "name": "chip8-emulator",
   "version": "1.0.0",
-  "description": "Classic chip-8 emualtor in javascript",
+  "description": "Classic chip-8 emulator in javascript",
   "main": "index.html",
   "scripts": {
     "watch":"parcel watch src/pages/index.html",
     "dev":"parcel src/pages/index.html",
-    "build":"parcel build src/pages/index.html --out-dir public --no-cache"
+    "build":"parcel build src/pages/index.html"
   },
   "keywords": [
     "chip8",

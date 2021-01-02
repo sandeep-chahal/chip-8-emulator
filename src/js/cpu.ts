@@ -137,22 +137,13 @@ class CPU {
 		}
 	}
 
-	loadRom(romName) {
-		var request = new XMLHttpRequest();
-		var self = this;
-
-		request.onload = function () {
-			if (request.response) {
-				let program = new Uint8Array(request.response);
-
-				self.loadProgramIntoMemory(program);
-			}
-		};
-
-		request.open("GET", "roms/" + romName);
-		request.responseType = "arraybuffer";
-
-		request.send();
+	async loadRom(romName) {
+		const res = await fetch(
+			`https://cors-anywhere.herokuapp.com/https://github.com/sandeep-chahal/chip-8-emulator/blob/main/public/roms/${romName}?raw=true`
+		);
+		const buffer = await res.arrayBuffer();
+		const program = new Uint8Array(buffer);
+		this.loadProgramIntoMemory(program);
 	}
 
 	updateTimers() {

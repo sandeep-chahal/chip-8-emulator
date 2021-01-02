@@ -22,7 +22,7 @@ class Speaker {
 
 			// Set the frequency
 			this.oscillator.frequency.setValueAtTime(
-				frequency || 440,
+				frequency || 400,
 				this.audioCtx.currentTime
 			);
 

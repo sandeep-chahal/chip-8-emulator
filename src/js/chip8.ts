@@ -23,7 +23,7 @@ let fps = 60,
 	elapsed,
 	loop;
 
-function init(romName) {
+async function init(romName) {
 	fpsInterval = 1000 / fps;
 	then = Date.now();
 	startTime = then;
@@ -32,7 +32,7 @@ function init(romName) {
 
 	if (romName !== "None") {
 		cpu.loadSpritesIntoMemory();
-		cpu.loadRom(romName);
+		await cpu.loadRom(romName);
 		loop = requestAnimationFrame(step);
 	}
 }
