@@ -1,5 +1,6 @@
 import CPU from "./cpu";
-const cpu = new CPU();
+const canvas = document.querySelector("canvas");
+const cpu = new CPU(canvas);
 
 let prevSelected: HTMLLIElement = document.querySelector("li");
 
@@ -31,8 +32,10 @@ async function init(romName) {
 	cpu.reset();
 
 	if (romName !== "None") {
+		canvas.classList.add("animate");
 		cpu.loadSpritesIntoMemory();
 		await cpu.loadRom(romName);
+		canvas.classList.remove("animate");
 		loop = requestAnimationFrame(step);
 	}
 }

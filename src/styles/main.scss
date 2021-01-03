@@ -57,6 +57,9 @@ main {
 			width: 100%;
 			border: 2px solid var(--primary1);
 		}
+		.animate {
+			animation: border-flicker 1s linear infinite;
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -117,5 +120,17 @@ main {
 				background: var(--black);
 			}
 		}
+	}
+}
+
+@keyframes border-flicker {
+	0% {
+		border: 2px solid var(--primary1);
+	}
+	33% {
+		border: 2px solid var(--primary2);
+	}
+	66% {
+		border: 2px solid var(--white);
 	}
 }

@@ -15,8 +15,8 @@ class CPU {
 	stack: Array<any>;
 	paused: boolean;
 	speed: number;
-	constructor() {
-		this.monitor = new Monitor(document.querySelector("canvas"), 10);
+	constructor(canvas: HTMLCanvasElement) {
+		this.monitor = new Monitor(canvas, 10);
 		this.speaker = new Speaker();
 		this.keyboard = new Keyboard();
 		this.reset();
