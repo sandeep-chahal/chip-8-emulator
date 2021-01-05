@@ -1,6 +1,7 @@
 import Monitor from "./monitor";
 import Speaker from "./speaker";
 import Keyboard from "./keyboard";
+import ROMS from "../data/roms.json";
 
 class CPU {
 	monitor: Monitor;
@@ -137,12 +138,8 @@ class CPU {
 		}
 	}
 
-	async loadRom(romName) {
-		const res = await fetch(
-			`https://cors-anywhere.herokuapp.com/https://github.com/sandeep-chahal/chip-8-emulator/blob/main/public/roms/${romName}?raw=true`
-		);
-		const buffer = await res.arrayBuffer();
-		const program = new Uint8Array(buffer);
+	loadRom(romName) {
+		const program = new Uint8Array(ROMS[romName].data);
 		this.loadProgramIntoMemory(program);
 	}
 
